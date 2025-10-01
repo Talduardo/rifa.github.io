@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Forth 067 Rifas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="logo">
+            <img src="./assets/logo.jpg" alt="Logo Forth 067">
+        </div>
+        <button class="menu-btn" id="menuBtn">&#9776;</button>
+    </header>
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <img src="./assets/logo.jpg" alt="Logo" class="sidebar-logo">
+            <span>Forth 067</span>
+            <button class="close-btn" id="closeSidebar">&times;</button>
+        </div>
+        <ul class="sidebar-list">
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Promoções</a></li>
+            <li><a href="#">Roletas</a></li>
+            <li><a href="#">Títulos</a></li>
+            <li><a href="#">Ganhadores</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </nav>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <main>
+        <div class="container">
+            <!-- Card principal do prêmio com carrossel -->
+            <section class="premio-principal-card">
+                <div class="premio-img-box">
+                    <div class="carrossel" id="carrossel">
+                        <img src="./assets/carro_frente.jpg" class="premio-img active" alt="Carro 1">
+                        <img src="./assets/carro_traseira.jpg" class="premio-img" alt="Carro 2">
+                        <img src="./assets/logo.jpg" class="premio-img" alt="Carro 3">
+                        <button class="carrossel-btn prev" type="button">&#10094;</button>
+                        <button class="carrossel-btn next" type="button">&#10095;</button>
+                        <div class="premio-contador" id="premioContador">1/3</div>
+                        <div class="premio-legenda-transp">
+                            <div class="premio-alerta">ESSA VAI SER RECORDE <span>🙏</span></div>
+                            <div class="premio-titulo">RANGER LIMITED PLUS</div>
+                            <div class="premio-sub">BORA ACABAR ATÉ SÁBADO? ÚLTIMA RAPIDINHA FOI 12 DIAS HEIN 🙏</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="premio-barra">
+                    <span class="premio-barra-titulos"><span>🏷️</span> Meus títulos</span>
+                    <span class="premio-barra-progresso">22.4%</span>
+                </div>
+                <div class="premio-barra-amarela"></div>
+                <div class="premio-preco">
+                    Por apenas <span class="premio-preco-valor">R$ 0,29</span>
+                </div>
+            </section>
+
+            <!-- PROMOÇÃO -->
+            <section class="promocao-card">
+                <div class="promocao-header">
+                    <span class="promocao-icon">🦊</span>
+                    <span class="promocao-title">Promoção</span>
+                    <span class="promocao-sub">Compre mais barato!</span>
+                </div>
+                <div class="promocao-ofertas">
+                    <span class="promocao-oferta">100 POR R$ 19,00 <span class="promocao-desconto">34%</span></span>
+                    <span class="promocao-oferta">1.000 POR R$ 190,00 <span class="promocao-desconto">34%</span></span>
+                    <span class="promocao-oferta">2.000 POR R$ 380,00 <span class="promocao-desconto">34%</span></span>
+                </div>
+                <div class="promocao-info">Quanto mais títulos, mais chances de ganhar!</div>
+                <div class="promocao-selecao">
+                    <button class="promocao-btn" data-quant="50">+50<br><span>SELECIONAR</span></button>
+                    <button class="promocao-btn" data-quant="100">+100<br><span>SELECIONAR</span></button>
+                    <button class="promocao-btn" data-quant="500">+500<br><span>SELECIONAR</span></button>
+                    <button class="promocao-btn" data-quant="1000">+1000<br><span>SELECIONAR</span></button>
+                </div>
+                <div class="promocao-quantidade">
+                    <button class="promocao-quant-btn" id="btnMinus">-</button>
+                    <input type="number" value="1832" min="1" class="promocao-quant-input" id="quantInput">
+                    <button class="promocao-quant-btn" id="btnPlus">+</button>
+                    <button class="promocao-participar">
+                        <span class="promocao-participar-icon">✔️</span>
+                        Quero participar <br>
+                        <b>R$ 431,28</b>
+                    </button>
+                </div>
+                <div class="promocao-regulamento">
+                    <span class="promocao-regulamento-icon">📄</span>
+                    <span>Descrição/Regulamento</span>
+                </div>
+            </section>
+
+            <!-- Combos Roletas Instantâneas -->
+            <section class="combos-card">
+                <div class="combos-header">
+                    <span class="combos-icon">🎯</span>
+                    <span class="combos-title">Roletas Instantâneas</span>
+                    <span class="combos-sub">combos</span>
+                </div>
+                <div class="combos-list">
+                    <div class="combo-item">
+                        <div>
+                            <div class="combo-chance">A partir de <b>100 Títulos</b></div>
+                            <div class="combo-price">por R$ 19,00</div>
+                            <div class="combo-desc">1 chance(s) de contemplação nas Roletas Instantâneas</div>
+                        </div>
+                        <div class="combo-recebe">
+                            <span class="combo-recebe-title">Recebe 1</span>
+                            <span class="combo-recebe-sub">Roleta 🎯</span>
+                        </div>
+                    </div>
+                    <div class="combo-item">
+                        <div>
+                            <div class="combo-chance">A partir de <b>140 Títulos</b></div>
+                            <div class="combo-price">por R$ 30,60</div>
+                            <div class="combo-desc">5 chance(s) de contemplação nas Roletas Instantâneas</div>
+                        </div>
+                        <div class="combo-recebe">
+                            <span class="combo-recebe-title">Recebe 5</span>
+                            <span class="combo-recebe-sub">Roletas 🎯</span>
+                        </div>
+                    </div>
+                    <div class="combo-item">
+                        <div>
+                            <div class="combo-chance">A partir de <b>200 Títulos</b></div>
+                            <div class="combo-price">por R$ 48,00</div>
+                            <div class="combo-desc">10 chance(s) de contemplação nas Roletas Instantâneas</div>
+                        </div>
+                        <div class="combo-recebe">
+                            <span class="combo-recebe-title">Recebe 10</span>
+                            <span class="combo-recebe-sub">Roletas 🎯</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Roletas Instantâneas -->
+            <section class="premios-card">
+                <div class="premios-header">
+                    <span class="premios-icon">🎯</span>
+                    <span class="premios-title">Roletas Instantâneas</span>
+                    <span class="premios-sub">ganhadores</span>
+                    <span class="premios-count">3/5</span>
+                </div>
+                <div class="premios-list">
+                    <div class="premio-item destaque">
+                        <span class="premio-nome">Prêmio Surpresa</span>
+                        <span class="premio-ganhador">Leonardo <span class="icon-user">👤</span></span>
+                    </div>
+                    <div class="premio-item destaque">
+                        <span class="premio-nome">Prêmio Surpresa</span>
+                        <span class="premio-ganhador">Gabriel <span class="icon-user">👤</span></span>
+                    </div>
+                    <div class="premio-item destaque">
+                        <span class="premio-nome">Prêmio Surpresa</span>
+                        <span class="premio-ganhador">Julio <span class="icon-user">👤</span></span>
+                    </div>
+                    <div class="premio-item">
+                        <span class="premio-nome">Prêmio Surpresa</span>
+                        <span class="premio-ganhador">Disponível</span>
+                    </div>
+                    <div class="premio-item">
+                        <span class="premio-nome">iPhone 17 Pro Max</span>
+                        <span class="premio-ganhador">Disponível</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Títulos Premiados -->
+            <section class="titulos-card">
+                <div class="titulos-header">
+                    <span class="titulos-icon">🏆</span>
+                    <span class="titulos-title">Títulos Premiados</span>
+                    <span class="titulos-count">1/10</span>
+                </div>
+                <div class="titulos-list">
+                    <div class="titulo-item">
+                        <span class="titulo-numero">5147929</span>
+                        <span class="titulo-premio">R$500,00 OU IPHONE 17 PRO MAX</span>
+                        <span class="titulo-ganhador">Disponível</span>
+                    </div>
+                    <div class="titulo-item destaque">
+                        <span class="titulo-numero">8638670</span>
+                        <span class="titulo-premio">R$500,00 OU IPHONE 17 PRO MAX</span>
+                        <span class="titulo-ganhador">Carlos <span class="icon-user">👤</span></span>
+                    </div>
+                    <div class="titulo-item">
+                        <span class="titulo-numero">8452906</span>
+                        <span class="titulo-premio">R$500,00 OU IPHONE 17 PRO MAX</span>
+                        <span class="titulo-ganhador">Disponível</span>
+                    </div>
+                    <div class="titulo-item">
+                        <span class="titulo-numero">1505770</span>
+                        <span class="titulo-premio">R$500,00 OU IPHONE 17 PRO MAX</span>
+                        <span class="titulo-ganhador">Disponível</span>
+                    </div>
+                    <div class="titulo-item">
+                        <span class="titulo-numero">7771694</span>
+                        <span class="titulo-premio">R$500,00 OU IPHONE 17 PRO MAX</span>
+                        <span class="titulo-ganhador">Disponível</span>
+                    </div>
+                </div>
+                <div class="mostrar-mais">▼ Mostrar Mais</div>
+            </section>
+        </div>
+    </main>
+    <script>
+    // Carrossel funcional e automático
+    const imgs = document.querySelectorAll('.carrossel .premio-img');
+    const prev = document.querySelector('.carrossel-btn.prev');
+    const next = document.querySelector('.carrossel-btn.next');
+    const contador = document.getElementById('premioContador');
+    let idx = 0;
+    let timer = null;
+
+    function showImg(i) {
+        imgs.forEach((img, j) => img.classList.toggle('active', j === i));
+        if (contador) contador.textContent = `${i+1}/${imgs.length}`;
+    }
+    function nextImg() {
+        idx = (idx + 1) % imgs.length;
+        showImg(idx);
+    }
+    function prevImg() {
+        idx = (idx - 1 + imgs.length) % imgs.length;
+        showImg(idx);
+    }
+    function startAuto() {
+        if (timer) clearInterval(timer);
+        timer = setInterval(() => {
+            nextImg();
+        }, 3000);
+    }
+    if (prev && next && imgs.length) {
+        prev.onclick = () => { prevImg(); startAuto(); };
+        next.onclick = () => { nextImg(); startAuto(); };
+        showImg(idx);
+        startAuto();
+    }
+
+    // Menu lateral funcional
+    const menuBtn = document.getElementById('menuBtn');
+    const sidebar = document.getElementById('sidebar');
+    const closeSidebar = document.getElementById('closeSidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    menuBtn.onclick = () => {
+        sidebar.classList.add('open');
+        sidebarOverlay.classList.add('open');
+    };
+    closeSidebar.onclick = () => {
+        sidebar.classList.remove('open');
+        sidebarOverlay.classList.remove('open');
+    };
+    sidebarOverlay.onclick = () => {
+        sidebar.classList.remove('open');
+        sidebarOverlay.classList.remove('open');
+    };
+
+    // Promoção: seleção de quantidade
+    const promoBtns = document.querySelectorAll('.promocao-btn');
+    const quantInput = document.getElementById('quantInput');
+    const btnMinus = document.getElementById('btnMinus');
+    const btnPlus = document.getElementById('btnPlus');
+    promoBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            promoBtns.forEach(b => b.classList.remove('selected'));
+            btn.classList.add('selected');
+            quantInput.value = btn.getAttribute('data-quant');
+        });
+    });
+    btnMinus.addEventListener('click', () => {
+        let val = parseInt(quantInput.value, 10);
+        if (val > 1) quantInput.value = val - 1;
+    });
+    btnPlus.addEventListener('click', () => {
+        let val = parseInt(quantInput.value, 10);
+        quantInput.value = val + 1;
+    });
+    </script>
+</body>
+</html>

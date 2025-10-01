@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Forth 067 Rifas - Ranger Limited Plus</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header class="topbar">
+        <div class="topbar-content">
+            <div class="logo">
+                <img src="./assets/logo.jpg" alt="Logo Forth 067">
+            </div>
+            <button class="menu-btn" id="menuBtn"  arial-label="Abrir menu">&#9776;</button>
+        </div>
+        <span class="user-info" id="userInfo" style="display:none;">
+            <span id="userEmail"></span>
+            <button id="logoutBtn" class="logout-btn">Sair</button>
+        </span>
+    </header>
+
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <img src="./assets/logo.jpg" alt="Logo" class="sidebar-logo">
+            <span>Forth 067</span>
+            <button class="close-btn" id="closeSidebar">&times;</button>
+        </div>
+        <ul class="sidebar-list">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#promocoes">Promoções</a></li>
+            <li><a href="#roletas">Roletas</a></li>
+            <li><a href="#titulos">Títulos</a></li>
+            <li><a href="#ganhadores">Ganhadores</a></li>
+            <li><a href="#">Contato</a></li>
+            <li><a href="#" id="menuEntrar">Entrar</a></li>
+        </ul>
+    </nav>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <main>
+        <div class="container">
+            
+            <section class="premio-principal-card">
+                <div class="premio-img-box">
+                    <div class="carrossel" id="carrossel">
+                        <img src="./assets/carro_frente.jpg" class="premio-img active" alt="Carro Vista Frontal">
+                        <img src="./assets/carro_traseira.jpg" class="premio-img" alt="Carro Vista Traseira">
+                        <img src="./assets/logo.jpg" class="premio-img" alt="Carro Interior">
+                        
+                        <button class="carrossel-btn prev" type="button">&#10094;</button>
+                        <button class="carrossel-btn next" type="button">&#10095;</button>
+                        
+                        <div class="premio-contador" id="premioContador">1/3</div>
+                        <div class="premio-legenda-transp">
+                            <div class="premio-alerta">ESSA VAI SER RECORDE <span>🙏</span></div>
+                            <div class="premio-titulo">RANGER LIMITED PLUS</div>
+                            <div class="premio-sub">BORA ACABAR ATÉ SÁBADO? ÚLTIMA RAPIDINHA FOI 12 DIAS HEIN 🙏</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="premio-barra">
+                    <span class="premio-barra-titulos"><span>🏷️</span> Meus títulos</span>
+                    <span class="premio-barra-progresso">22.4%</span>
+                </div>
+                <div class="premio-barra-amarela"></div>
+                <div class="premio-preco">
+                    Por apenas <span class="premio-preco-valor">R$ 0,29</span>
+                </div>
+            </section>
+
+            <section class="promocao-card">
+                <div class="promocao-header">
+                    <span class="promocao-icon">📣</span>
+                    <span class="promocao-title">Promoção</span>
+                    <span class="promocao-sub">Compre mais barato!</span>
+                </div>
+                <div class="promocao-ofertas">
+                    <span class="promocao-oferta">100 POR R$ 19,00 <span class="promocao-desconto">34%</span></span>
+                    <span class="promocao-oferta">1.000 POR R$ 190,00 <span class="promocao-desconto">34%</span></span>
+                    <span class="promocao-oferta">2.000 POR R$ 380,00 <span class="promocao-desconto">34%</span></span>
+                </div>
+                <div class="promocao-info">Quanto mais títulos, mais chances de ganhar!</div>
+                
+                <div class="promocao-selecao">
+                    <button class="promocao-btn" data-quant="50">+50<br><span>SELECIONAR</span></button>
+                    <button class="promocao-btn" data-quant="100">+100<br><span>SELECIONAR</span></button>
+                    <button class="promocao-btn" data-quant="500">+500<br><span>SELECIONAR</span></button>
+                    <button class="promocao-btn" data-quant="1000">+1000<br><span>SELECIONAR</span></button>
+                </div>
+                
+                <div class="promocao-acao">
+                    <div class="promocao-quantidade-input-group">
+                        <button class="promocao-quant-btn" id="btnMinus">-</button>
+                        <input type="number" value="1" min="1" class="promocao-quant-input" id="quantInput">
+                        <button class="promocao-quant-btn" id="btnPlus">+</button>
+                    </div>
+                    <button class="promocao-participar" id="abrirCompraPontos">
+                        <span class="promocao-participar-icon">✔️</span>
+                        <span class="promocao-participar-textos">
+                            <span>Quero participar</span>
+                            <b id="valorParticipar">R$ 0,29</b>
+                        </span>
+                    </button>
+                </div>
+                <div class="promocao-regulamento">
+                    <span class="promocao-regulamento-icon">📄</span>
+                    <span>Descrição/Regulamento</span>
+                </div>
+            </section>
+                
+                <div class="numeros-info">
+                    <span class="legenda-item"><span class="legenda-cor livre"></span> Livre</span>
+                    <span class="legenda-item"><span class="legenda-cor reservado"></span> Reservado</span>
+                    <span class="legenda-item"><span class="legenda-cor vendido"></span> Vendido</span>
+                </div>
+
+                <div class="numeros-grid" id="numerosGrid">
+                    </div>
+            </section>
+
+            <section class="combos-card">
+                <div class="combos-header">
+                    <span class="combos-icon">🎯</span>
+                    <span class="combos-title">Roletas Instantâneas</span>
+                    <span class="combos-sub">combos</span>
+                </div>
+                <div class="combos-list">
+                    <div class="combo-item">
+                        <div>
+                            <div class="combo-chance">A partir de <b>100 Títulos</b></div>
+                            <div class="combo-price">por R$ 19,00</div>
+                            <div class="combo-desc">1 chance(s) de contemplação nas Roletas Instantâneas</div>
+                        </div>
+                        <div class="combo-recebe">
+                            <span class="combo-recebe-title">Recebe 1</span>
+                            <span class="combo-recebe-sub">Roleta 🎯</span>
+                        </div>
+                    </div>
+                    <div class="combo-item">
+                        <div>
+                            <div class="combo-chance">A partir de <b>140 Títulos</b></div>
+                            <div class="combo-price">por R$ 30,60</div>
+                            <div class="combo-desc">5 chance(s) de contemplação nas Roletas Instantâneas</div>
+                        </div>
+                        <div class="combo-recebe">
+                            <span class="combo-recebe-title">Recebe 5</span>
+                            <span class="combo-recebe-sub">Roletas 🎯</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="premios-card">
+                <div class="premios-header">
+                    <span class="premios-icon">🎯</span>
+                    <span class="premios-title">Ganhadores Recentes</span>
+                    <span class="premios-sub">roleta/prêmios</span>
+                    <span class="premios-count">3/5</span>
+                </div>
+                <div class="premios-list">
+                    <div class="premio-item destaque">
+                        <span class="premio-nome">Prêmio Surpresa</span>
+                        <span class="premio-ganhador">Leonardo <span class="icon-user">👤</span></span>
+                    </div>
+                    <div class="premio-item">
+                        <span class="premio-nome">iPhone 17 Pro Max</span>
+                        <span class="premio-ganhador">Disponível</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="titulos-card">
+                <div class="titulos-header">
+                    <span class="titulos-icon">🏆</span>
+                    <span class="titulos-title">Títulos Premiados Extras</span>
+                    <span class="titulos-count">1/10</span>
+                </div>
+                <div class="titulos-list">
+                    <div class="titulo-item destaque">
+                        <span class="titulo-numero">8638670</span>
+                        <span class="titulo-premio">R$500,00 OU IPHONE 17 PRO MAX</span>
+                        <span class="titulo-ganhador">Carlos <span class="icon-user">👤</span></span>
+                    </div>
+                    <div class="titulo-item">
+                        <span class="titulo-numero">8452906</span>
+                        <span class="titulo-premio">R$500,00 OU IPHONE 17 PRO MAX</span>
+                        <span class="titulo-ganhador">Disponível</span>
+                    </div>
+                    <div class="titulo-item">
+                        <span class="titulo-numero">7771694</span>
+                        <span class="titulo-premio">R$500,00 OU IPHONE 17 PRO MAX</span>
+                        <span class="titulo-ganhador">Disponível</span>
+                    </div>
+                </div>
+                <div class="mostrar-mais">▼ Mostrar Mais</div>
+            </section>
+        </div>
+    </main>
+
+    <div class="modal-bg" id="modalBg"></div>
+    <div class="modal" id="modalAuth">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModalAuth">&times;</button>
+            <h2 id="modalAuthTitle">Entrar</h2>
+            <form id="authForm">
+                <input type="email" id="authEmail" placeholder="E-mail" required>
+                <input type="password" id="authPassword" placeholder="Senha" required>
+                <button type="submit" class="modal-btn">Entrar</button>
+            </form>
+            <p id="toggleAuth" style="text-align:center; margin-top:10px; cursor:pointer;">
+                Não tem conta? <span style="color:#ffe600;">Cadastre-se</span>
+            </p>
+        </div>
+    </div>
+
+    <div class="compra-pontos" id="compraPontos" style="display:none;">
+        <button class="modal-close" id="closeCompraPontos">&times;</button>
+        <h2>Finalizar Compra</h2>
+        <p>Quantidade selecionada: <span id="compraQtd"></span></p>
+        <p>Valor total: <span id="compraValor"></span></p>
+        <form id="formCompra">
+            <input type="text" placeholder="Nome completo" id="nomeCompra" required>
+            <input type="email" placeholder="E-mail" id="emailCompra" required>
+            <button type="submit" class="modal-btn">Gerar PIX</button>
+        </form>
+        <div id="compraSucesso" style="display:none; color:#23d160; text-align:center; margin-top:10px;">
+            Pedido criado! Siga as instruções de pagamento no seu e-mail.
+        </div>
+    </div>
+
+    <button class="cta-fixo-mobile" id="ctaFixoMobile" style="display:none;">
+        Quero participar <b id="valorParticiparMobile">R$ 0,29</b>
+    </button>
+
+    <script src="./main.js"></script>
+</body>
+</html>
